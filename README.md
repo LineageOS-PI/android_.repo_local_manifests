@@ -19,7 +19,14 @@ git clone https://github.com/LineageOS-PI/android_.repo_local_manifests .repo/lo
 repo sync
 ```
 
-4. Compile:
+4. Apply [patches](https://github.com/LineageOS-PI/android.repo_local_manifest/tree/lineage-16.0/patches):
+
+```
+cd path/to/project
+git am patchname.patch
+```
+
+5. Compile:
 
 ```
 . build/envsetup.sh
@@ -27,7 +34,7 @@ lunch lineage_rpi3-userdebug
 mka kernel ramdisk systemimage vendorimage
 ```
 
-5. Create writable image:
+6. Create writable image:
 
 ```
 cd device/brcm/rpi3
