@@ -2,7 +2,26 @@
 <manifest>
     <!--
     * target: Raspberry
-    * rom: LineageOS 15.1
+    * rom: LineageOS 16.0
     -->
+
+    <!-- remote -->
+    <remote fetch="https://github.com/https://github.com/LineageOS-PI/" name="lineage-pi" />
+
+    <!-- device -->
+    <project path="device/brcm/rpi3" name="android_device_brcm_rpi3" revision="lineage-16.0" remote="lineage-pi" />
+
+    <!-- kernel -->
+    <project path="kernel/brcm/rpi3" name="android_kernel_brcm_rpi3" revision="lineage-16.0" remote="lineage-pi" />
+
+    <!-- vendor -->
+    <project path="vendor/brcm" name="android_proprietary_vendor_brcm_rpi3" revision="lineage-16.0" remote="lineage-pi" />
+
+    <!-- Misc -->
+    <project path="external/i2c-tools" name="android_external_i2c-tools" revision="lineage-16.0" remote="lineage-pi"/>
+
+    <!-- Repopick -->
+    <remove-project name="platform/external/swiftshader"/>
+    <project path="external/swiftshader" name="android_external_swiftshader" revision="lineage-16.0" remote="lineage-pi" />
 
 </manifest>
